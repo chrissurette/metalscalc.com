@@ -1010,6 +1010,13 @@ img { display: block; max-width: 100%; height: auto; }
     padding-top: 2rem;
     padding-bottom: 1.5rem;
   }
+  .hero__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero__lede { margin-inline: auto; }
   /* Compress section and feature-pair vertical padding so stacked iPhones don't gap */
   .section { padding-top: 1.25rem; padding-bottom: 1.25rem; }
   .feature-pair { padding-top: .75rem; padding-bottom: .75rem; }
