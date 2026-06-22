@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MetalsCalc — Buying calculator for precious-metal dealers</title>
+  <meta name="description" content="MetalsCalc turns live Au/Ag/Pt prices and your buy percentages into an instant offer — and a finished invoice — on any phone. No spreadsheets, no signal required.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Load webfonts non-blocking: page renders immediately with fallbacks, upgrades when fonts arrive -->
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  </noscript>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== Live price ticker ===== -->
+  <div class="ticker" role="region" aria-label="Spot metal prices">
+    <div class="ticker__inner">
+      <div class="ticker__quotes">
+        <span class="quote"><span class="quote__sym">XAU</span><span class="quote__price">$2,387.40</span><span class="quote__chg up">▲ 0.6%</span></span>
+        <span class="quote"><span class="quote__sym">XAG</span><span class="quote__price">$29.84</span><span class="quote__chg down">▼ 0.2%</span></span>
+        <span class="quote"><span class="quote__sym">XPT</span><span class="quote__price">$978.10</span><span class="quote__chg up">▲ 1.1%</span></span>
+      </div>
+      <div class="ticker__src"><span class="live-dot"></span>LIVE · gold-api.com</div>
+    </div>
+  </div>
+
+  <!-- ===== Nav ===== -->
+  <header class="nav">
+    <a class="brand" href="#top">
+      <span class="brand__mark">⚖</span> MetalsCalc
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#capabilities">Product</a>
+      <a href="#invoicing">Invoicing</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#docs">Docs</a>
+    </nav>
+    <a class="btn btn--gold nav__cta" href="https://app.metalscalc.com/">Install free</a>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="hero__copy">
+        <span class="badge">⚖ Buying calculator for precious-metal dealers</span>
+        <h1 class="hero__title">One list for every<br>item in the buy.<br><span class="gold">Fully customizable.</span></h1>
+        <p class="hero__lede">MetalsCalc turns live Au/Ag/Pt prices and your buy percentages into an instant offer — and a finished invoice — on any phone. No spreadsheets, no signal required.</p>
+        <div class="hero__actions">
+          <a class="btn btn--gold" href="https://app.metalscalc.com/">Install the app — free</a>
+          <a class="btn btn--ghost" href="#capabilities">See it run →</a>
+        </div>
+      </div>
+
+      <!-- App screenshot: real list view -->
+      <div class="phone">
+        <div class="phone__bar">metalscalc — list view</div>
+        <img class="phone__shot" src="screenshot.png" width="475" height="1211"
+             alt="MetalsCalc list view showing gold, silver and coin lots with combined totals and a $5,446.41 total offer">
+      </div>
+    </section>
+
+    <!-- ===== Stats strip ===== -->
+    <section class="stats">
+      <div class="stat"><span class="stat__n">&lt;10s</span><span class="stat__l">From weigh-in to printed offer</span></div>
+      <div class="stat"><span class="stat__n">3</span><span class="stat__l">Metals — gold, silver, platinum</span></div>
+      <div class="stat"><span class="stat__n">100%</span><span class="stat__l">Offline-capable PWA</span></div>
+      <div class="stat"><span class="stat__n">1-tap</span><span class="stat__l">PDF · photo · email invoices</span></div>
+    </section>
+
+    <!-- ===== Capabilities ===== -->
+    <section class="section" id="capabilities">
+      <div class="section__head">
+        <span class="eyebrow">Capabilities</span>
+        <h2>Built like a trading desk.<br>Priced for a counter.</h2>
+      </div>
+      <div class="features">
+        <article class="feature">
+          <span class="feature__num">01</span>
+          <h3>Live spot pricing</h3>
+          <p>One-tap Au, Ag &amp; Pt pulls from gold-api.com — or flip to manual to lock a number for the day.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__num">02</span>
+          <h3>Your buy % &amp; purity</h3>
+          <p>Set buy percentages per metal and override purity for any karat or grade. Margins apply everywhere instantly.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__num">03</span>
+          <h3>List · Single · Batch</h3>
+          <p>Three calc modes for a mixed lot, a single piece, or a tray of identical grade. Switch without losing data.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__num">04</span>
+          <h3>Coins &amp; bullion</h3>
+          <p>Pull known coins and bars from a library with set weights. Offer by % of spot or dollars below spot.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__num">05</span>
+          <h3>My Value margin</h3>
+          <p>Track your target sell price beside every buy offer so you always see the margin you're retaining.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__num">06</span>
+          <h3>Offline PWA</h3>
+          <p>Installs to the home screen and runs with zero signal — show floors, estate calls, the back room.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Invoicing ===== -->
+    <section class="section invoicing" id="invoicing">
+      <div class="invoicing__copy">
+        <span class="eyebrow">Invoicing</span>
+        <h2>Close the deal,<br>then close the paperwork.</h2>
+        <p class="invoicing__lede">Import the active list, drop in the customer, and finalize. Every invoice is stored and re-sendable.</p>
+        <ul class="checks">
+          <li><span class="arrow">→</span> Line items pulled straight from your list</li>
+          <li><span class="arrow">→</span> Business header, notes, and custom offer override</li>
+          <li><span class="arrow">→</span> Export to PDF, photo, or email in one step</li>
+        </ul>
+        <a class="btn btn--ghost" href="#docs">Explore invoicing →</a>
+      </div>
+      <div class="invoice-card" aria-hidden="true">
+        <div class="invoice-card__bar">invoice — finalize &amp; export (PDF / photo / email)</div>
+        <div class="invoice-card__body">
+          <div class="invoice-card__row"><span>14k Gold · 18.4g</span><span>$612.40</span></div>
+          <div class="invoice-card__row"><span>18k Gold · 9.2g</span><span>$394.10</span></div>
+          <div class="invoice-card__row"><span>Sterling · 240g</span><span>$184.10</span></div>
+          <div class="invoice-card__row"><span>1oz Eagle ×3</span><span>$7,161.00</span></div>
+          <div class="invoice-card__row"><span>Plat 950 · 12g</span><span>$321.80</span></div>
+          <div class="invoice-card__total"><span>Total</span><span class="gold">$8,673.40</span></div>
+          <div class="invoice-card__exports">
+            <span>📄 PDF</span><span>📷 Photo</span><span>✉ Email</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Final CTA ===== -->
+    <section class="cta" id="install">
+      <h2>Price your next lot<br>in <span class="gold">ten seconds.</span></h2>
+      <p>Install MetalsCalc free. No account, no app store, no signal needed.</p>
+      <a class="btn btn--gold btn--lg" href="https://app.metalscalc.com/">Install the app — free</a>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer" id="pricing">
+    <a class="brand" href="#top"><span class="brand__mark">⚖</span> MetalsCalc</a>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="#capabilities">Product</a>
+      <a href="#invoicing">Invoicing</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#privacy">Privacy</a>
+    </nav>
+    <span class="footer__copy">© 2026</span>
+  </footer>
+
+</body>
+</html>
