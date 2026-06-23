@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir \"C:\\\\Users\\\\rcman\\\\OneDrive\\\\Desktop\\\\calca\\\\export\")",
+      "Bash(cp \"C:\\\\Users\\\\rcman\\\\OneDrive\\\\Desktop\\\\calca\\\\dist\\\\scrap-calculator.iife.js\" \"C:\\\\Users\\\\rcman\\\\OneDrive\\\\Desktop\\\\calca\\\\export\\\\\"; cp \"C:\\\\Users\\\\rcman\\\\OneDrive\\\\Desktop\\\\calca\\\\dist\\\\style.css\" \"C:\\\\Users\\\\rcman\\\\OneDrive\\\\Desktop\\\\calca\\\\export\\\\\")"
+    ]
+  }
+}

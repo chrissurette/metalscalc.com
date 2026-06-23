@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scrap Metal Value Calculator</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'scrap-dark': '#1a1d1f',
+            'scrap-card': '#24272b',
+            'scrap-gold': '#d4af37',
+            'scrap-gold-bright': '#f9d976',
+            'scrap-input': '#2d3135',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style data-purpose="layout-background">
+    body {
+      background-color: #121417;
+      /* Using a radial gradient and noise simulation for the leather/charcoal texture */
+      background-image: 
+        radial-gradient(circle at center, rgba(40, 45, 50, 0.5) 0%, rgba(10, 12, 14, 0.9) 100%),
+        url('https://www.transparenttextures.com/patterns/dark-leather.png');
+      min-height: 100vh;
+      color: #e2e8f0;
+    }
+    
+    .card-glow {
+      box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05), 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .inner-recess {
+      box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  </style>
+<style data-purpose="components">
+    /* Metallic Toggle Switch Styles */
+    .toggle-container {
+      background: linear-gradient(180deg, #3a3f44 0%, #22262a 100%);
+      border-radius: 8px;
+      padding: 4px;
+      display: flex;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .toggle-item {
+      flex: 1;
+      text-align: center;
+      padding: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      color: #71717a;
+    }
+    .toggle-item.active {
+      background: linear-gradient(180deg, #6b7280 0%, #374151 100%);
+      color: #fff;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+      position: relative;
+    }
+    .toggle-item.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: #f9d976;
+      filter: blur(4px);
+    }
+
+    /* Metallic Gold Gradient Text */
+    .gold-text-gradient {
+      background: linear-gradient(to bottom, #f9d976 0%, #d4af37 50%, #b8860b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    }
+
+    /* Range Slider Styling */
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      background: transparent;
+    }
+    input[type=range]:focus {
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 6px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #d4af37 0%, #d4af37 80%, #3a3f44 80%, #3a3f44 100%);
+      border-radius: 3px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #f9d976, #d4af37 60%, #8b4513);
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -9px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      border: 1px solid #b8860b;
+    }
+
+    /* Custom Calculation Button */
+    .calculate-btn {
+      background: linear-gradient(to bottom, #f3d484 0%, #d4af37 50%, #a68b2d 100%);
+      color: #1a1d1f;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      transition: transform 0.1s;
+      box-shadow: 0 4px 0 #7a6520, 0 8px 15px rgba(0,0,0,0.4);
+    }
+    .calculate-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #7a6520, 0 4px 8px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body class="antialiased" style="background-color: #121417; background-image: radial-gradient(circle at center, rgba(40, 45, 50, 0.8) 0%, rgba(10, 12, 14, 0.95) 100%), url('https://www.transparenttextures.com/patterns/dark-leather.png');">
+<!-- BEGIN: MainHeader -->
+<header class="py-6 px-8 flex justify-center space-x-12 text-sm font-medium tracking-wide border-b border-white/5 bg-black/20 backdrop-blur-sm"><a class="text-white/70 hover:text-scrap-gold transition-colors" href="#">Dashboard</a>
+<a class="text-white/70 hover:text-scrap-gold transition-colors" href="#">Market Trends</a>
+<a class="text-white/70 hover:text-scrap-gold transition-colors" href="#">Calculation History</a>
+<a class="text-white/70 hover:text-scrap-gold transition-colors" href="#">Settings</a></header>
+<!-- END: MainHeader -->
+<main class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+<!-- BEGIN: LeftCard - Inputs -->
+<section class="bg-scrap-card rounded-2xl p-8 card-glow space-y-8 py-10" data-purpose="input-card" style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 0 20px rgba(255,255,255,0.05), 0 10px 30px rgba(0,0,0,0.8); border-top: 1px solid rgba(255,255,255,0.15); border-bottom: 2px solid rgba(0,0,0,0.6);">
+<!-- Metal Type Toggle -->
+<div class="toggle-container" data-purpose="metal-toggle" style="background: linear-gradient(180deg, #4a5056 0%, #1a1d21 100%); border-top: 1px solid rgba(255,255,255,0.2); box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);">
+<div class="toggle-item">Gold</div>
+<div class="toggle-item active" style="background: linear-gradient(180deg, #8b95a5 0%, #4b5563 100%); box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);">Silver</div>
+</div>
+<!-- Step 1: Weight -->
+<div class="space-y-3">
+<label class="block text-sm font-bold text-scrap-gold/90"><span class="text-scrap-gold mr-1 font-extrabold drop-shadow-[0_0_2px_rgba(212,175,55,0.5)]">1.</span> <span class="text-white font-bold">Enter Weight</span></label>
+<div class="flex gap-3">
+<input class="flex-grow bg-scrap-input border-white/10 rounded-lg text-white/80 focus:ring-scrap-gold focus:border-scrap-gold py-3 px-4 inner-recess" type="text" value="0.00"/>
+<select class="w-1/3 bg-scrap-input border-white/10 rounded-lg text-white/80 focus:ring-scrap-gold focus:border-scrap-gold py-3 px-4 inner-recess">
+<option>Grams</option>
+<option>Ounces</option>
+<option>Pennyweight</option>
+</select>
+</div>
+</div>
+<!-- Step 2: Purity -->
+<div class="space-y-3">
+<label class="block text-sm font-bold text-scrap-gold/90"><span class="text-scrap-gold mr-1 font-extrabold drop-shadow-[0_0_2px_rgba(212,175,55,0.5)]">2.</span> <span class="text-white font-bold">Select Purity</span></label>
+<div class="relative">
+<select class="w-full bg-scrap-input border-white/10 rounded-lg text-white/80 focus:ring-scrap-gold focus:border-scrap-gold py-3 px-4 inner-recess appearance-none">
+<option>Sterling Silver .925 *</option>
+<option>90% Silver Coinage</option>
+<option>99.9% Pure Silver</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-white/40">
+<svg class="h-4 w-4 fill-current" viewbox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"></path></svg>
+</div>
+</div>
+</div>
+<!-- Step 3: Market Price -->
+<div class="space-y-3">
+<label class="block text-sm font-bold text-scrap-gold/90"><span class="text-scrap-gold mr-1 font-extrabold drop-shadow-[0_0_2px_rgba(212,175,55,0.5)]">3.</span> <span class="text-white font-bold">Current Market Price</span></label>
+<div class="space-y-1">
+<input class="w-full bg-scrap-input border-white/10 rounded-lg text-white/80 focus:ring-scrap-gold focus:border-scrap-gold py-3 px-4 inner-recess" type="text" value="$25.00"/>
+<p class="text-[10px] text-white/40 uppercase tracking-tighter">Troy Ounce Price on Jun 22, 2026</p>
+</div>
+</div>
+<!-- Calculate Button -->
+<button class="w-full py-4 rounded-xl calculate-btn text-lg mt-4" style="background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 30%), linear-gradient(to bottom, #fdf0b5 0%, #d4af37 40%, #997a15 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 5px 0 #5c4c18, 0 10px 20px rgba(0,0,0,0.6); position: relative; overflow: hidden;">
+          Calculate Scrap Value
+        </button>
+</section>
+<!-- END: LeftCard -->
+<!-- BEGIN: RightCard - Results -->
+<section class="bg-scrap-card rounded-2xl p-8 card-glow flex flex-col py-10" data-purpose="results-card" style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 0 20px rgba(255,255,255,0.05), 0 10px 30px rgba(0,0,0,0.8); border-top: 1px solid rgba(255,255,255,0.15); border-bottom: 2px solid rgba(0,0,0,0.6);">
+<h2 class="text-center text-xl font-bold mb-6">Live Value Summary</h2>
+<!-- Main Result Display -->
+<div class="flex-grow flex flex-col items-center justify-center py-12 rounded-2xl inner-recess border border-white/5 mb-6 relative overflow-hidden" style="box-shadow: inset 0 5px 15px rgba(0,0,0,0.8), inset 0 0 20px rgba(255,255,255,0.05);">
+<!-- Subtle glow behind text -->
+<div class="absolute inset-0 bg-scrap-gold/5 blur-3xl rounded-full"></div>
+<div class="relative z-10 text-center">
+<span class="text-8xl font-extrabold gold-text-gradient leading-none" style="background: linear-gradient(to bottom, #fff8d6 0%, #f9d976 30%, #d4af37 60%, #8b6508 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.8));">$20.00</span>
+</div>
+</div>
+<!-- Meta info -->
+<div class="space-y-8">
+<div class="pb-6 border-b border-white/10">
+<p class="text-sm text-white/80">Current Spot Price: <span class="font-bold text-white">$25.00/oz</span></p>
+</div>
+<!-- Step 4: Adjust Percentage -->
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<div>
+<label class="block text-sm font-bold text-scrap-gold/90"><span class="text-scrap-gold mr-1 font-extrabold drop-shadow-[0_0_2px_rgba(212,175,55,0.5)]">4.</span> <span class="text-white font-bold">Adjust Percentage</span></label>
+<p class="text-sm text-white/80 mt-1">Payout: 80% ($20.00)</p>
+</div>
+</div>
+<div class="pt-2">
+<input class="cursor-pointer" id="payout-slider" max="100" min="0" type="range" value="80"/>
+</div>
+</div>
+</div>
+</section>
+<!-- END: RightCard -->
+</div>
+</main>
+<!-- BEGIN: Interactive Logic (Example only) -->
+<script data-purpose="event-handlers">
+    // Simple mock logic for interactive elements
+    const slider = document.getElementById('payout-slider');
+    if (slider) {
+      slider.addEventListener('input', (e) => {
+        // Logic to update the track gradient dynamically if needed
+        const val = e.target.value;
+        e.target.style.background = `linear-gradient(90deg, #d4af37 0%, #d4af37 ${val}%, #3a3f44 ${val}%, #3a3f44 100%)`;
+      });
+    }
+  </script>
+<!-- END: Interactive Logic -->
+</body></html>

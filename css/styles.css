@@ -200,6 +200,22 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .nav__cta { flex-shrink: 0; }
 
+/* ===== Widget bridge ===== */
+
+.widget-spacer {
+  background: #ffffff;
+  height: clamp(8rem, 16vw, 14rem);
+}
+
+.widget-bridge {
+  background: #ffffff;
+  text-align: center;
+  padding: 3rem var(--pad-x) 4.5rem;
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: #7a7570;
+}
+
 /* ===== Hero ===== */
 
 .hero {

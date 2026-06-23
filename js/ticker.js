@@ -24,6 +24,10 @@
         );
         if (el) el.textContent = fmt(data.price);
       });
+      var bySymbol = {};
+      results.forEach(function (d) { bySymbol[d.symbol] = d.price; });
+      window.metalPrices = { gold: bySymbol['XAU'], silver: bySymbol['XAG'], platinum: bySymbol['XPT'], updatedAt: Date.now() };
+      window.dispatchEvent(new CustomEvent('metalprices:update', { detail: window.metalPrices }));
     }).catch(function () {
       // network error — dashes remain, live dot continues pulsing
     });

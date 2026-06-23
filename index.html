@@ -32,6 +32,7 @@
   </noscript>
 
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="CalcA/dist/style.css">
 </head>
 <body>
 
@@ -52,11 +53,16 @@
     <a class="brand" href="#top">
       <img class="brand__mark" src="icon.png" alt=""> MetalsCalc.com
     </a>
-    <a class="btn btn--gold nav__cta" href="https://app.metalscalc.com/">Use It Free</a>
+    <a class="btn btn--gold nav__cta" href="https://app.metalscalc.com/">Try Mobile App</a>
   </header>
 
   <main id="top">
 
+    <!-- ===== Scrap calculator widget ===== -->
+    <div id="scrap-calculator"></div>
+    <div class="widget-spacer" style="background:#ffffff;height:clamp(8rem,16vw,14rem);display:flex;align-items:center;justify-content:center;padding:0 var(--pad-x)">
+      <p style="margin:0;font-family:'Space Grotesk',system-ui,sans-serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:600;color:#1a1a1a;text-align:center;letter-spacing:-.01em;">Like this? Explore our full mobile app below.</p>
+    </div>
     <!-- ===== Hero ===== -->
     <section class="hero">
       <div class="hero__copy">
@@ -227,6 +233,9 @@
   </a>
 
   <script src="js/ticker.js"></script>
+  <script>window.process = { env: { NODE_ENV: 'production' } };</script>
+  <script src="CalcA/dist/scrap-calculator.iife.js"></script>
   <script src="js/scroll-hint.js"></script>
+  <script src="js/widget-focus-zoom.js"></script>
 </body>
 </html>
