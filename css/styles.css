@@ -190,6 +190,18 @@ img { display: block; max-width: 100%; height: auto; }
   gap: .5rem;
   flex-shrink: 0;
 }
+.brand__names {
+  display: flex;
+  flex-direction: column;
+  gap: .08rem;
+  line-height: 1.2;
+}
+.brand__secondary {
+  font-size: .72rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0;
+}
 .brand__mark {
   width: 30px;
   height: 30px;

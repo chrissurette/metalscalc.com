@@ -51,7 +51,14 @@
   <!-- ===== Nav ===== -->
   <header class="nav">
     <a class="brand" href="#top">
-      <img class="brand__mark" src="icon.png" alt=""> MetalsCalc.com
+      <span style="position:relative;display:inline-block;width:58px;height:58px;flex-shrink:0;margin-left:-6px;mix-blend-mode:screen;background:#000">
+        <img src="icon.png" alt="" style="width:58px;height:58px;object-fit:contain;filter:invert(1);display:block">
+        <span style="position:absolute;inset:0;background:linear-gradient(145deg,#ffe680 0%,#dcb45a 50%,#9a6e1a 100%);mix-blend-mode:multiply;pointer-events:none"></span>
+      </span>
+      <span style="display:flex;flex-direction:column;gap:.08rem;line-height:1.2">
+        <span>SpotCalc.com</span>
+        <span>MetalsCalc.com</span>
+      </span>
     </a>
     <a class="btn btn--gold nav__cta" href="https://app.metalscalc.com/">Try Mobile App</a>
   </header>
