@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 
 const TROY_PER_GRAM = 1 / 31.1035
@@ -56,6 +56,7 @@ const METALS = {
 }
 
 const fmt = (n) => '$' + n.toFixed(2)
+const spotInputValue = (n) => Number(n || 0).toFixed(2)
 
 const chevron = (
   <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -125,17 +126,34 @@ export default function App() {
     platinum:  METALS.platinum.spot,
     updatedAt: null,
   })
+  const spotEditedRef = useRef({ gold: false, silver: false, platinum: false })
+  const [spotInputs, setSpotInputs] = useState({
+    gold:      spotInputValue(METALS.gold.spot),
+    silver:    spotInputValue(METALS.silver.spot),
+    platinum:  spotInputValue(METALS.platinum.spot),
+  })
 
   const { purities } = METALS[metal]
-  const spot = spotPrices[metal]
+  const spot = parseFloat(spotInputs[metal])
 
   useEffect(() => {
-    const apply = (prices) => setSpotPrices(prev => ({
-      gold:      prices.gold      ?? prev.gold,
-      silver:    prices.silver    ?? prev.silver,
-      platinum:  prices.platinum  ?? prev.platinum,
-      updatedAt: prices.updatedAt ?? prev.updatedAt,
-    }))
+    const apply = (prices) => {
+      setSpotPrices(prev => ({
+        gold:      prices.gold      ?? prev.gold,
+        silver:    prices.silver    ?? prev.silver,
+        platinum:  prices.platinum  ?? prev.platinum,
+        updatedAt: prices.updatedAt ?? prev.updatedAt,
+      }))
+      setSpotInputs(prev => {
+        const next = { ...prev }
+        ;['gold', 'silver', 'platinum'].forEach((m) => {
+          if (!spotEditedRef.current[m] && prices[m] != null) {
+            next[m] = spotInputValue(prices[m])
+          }
+        })
+        return next
+      })
+    }
     const handler = (e) => apply(e.detail)
     window.addEventListener('metalprices:update', handler)
     if (window.metalPrices) apply(window.metalPrices)
@@ -183,11 +201,29 @@ export default function App() {
     }
   }
 
+  const handleSpotChange = (e) => {
+    const v = e.target.value
+    if (v === '' || /^\d*\.?\d*$/.test(v)) {
+      spotEditedRef.current[metal] = true
+      setSpotInputs(prev => ({ ...prev, [metal]: v }))
+      setResult(null)
+    }
+  }
+
+  const handleSpotBlur = () => {
+    setSpotInputs(prev => {
+      const value = parseFloat(prev[metal])
+      if (!value || value <= 0) return prev
+      return { ...prev, [metal]: spotInputValue(value) }
+    })
+  }
+
   const calculate = () => {
     const w = parseFloat(weight)
     if (!w || w <= 0) return
     const purityVal = purity === CUSTOM ? parseFloat(customPct) / 100 : purity
     if (!purityVal || purityVal <= 0 || purityVal > 1) return
+    if (!spot || spot <= 0) return
     const troyOz = unit === 'grams' ? w * TROY_PER_GRAM : unit === 'dwt' ? w * TROY_PER_DWT : w
     setResult(troyOz * purityVal * spot)
   }
@@ -225,6 +261,12 @@ export default function App() {
     setMetal('gold')
     setUnit('grams')
     setPurity(METALS.gold.defaultPurity)
+    spotEditedRef.current = { gold: false, silver: false, platinum: false }
+    setSpotInputs({
+      gold:      spotInputValue(spotPrices.gold),
+      silver:    spotInputValue(spotPrices.silver),
+      platinum:  spotInputValue(spotPrices.platinum),
+    })
     setPayout(80)
     setShowConfirm(false)
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -368,8 +410,30 @@ export default function App() {
             <span style={{ color: GOLD_FLAT }}>3.</span> Current Spot Price
           </h2>
 
-          <div style={{ ...field, padding: '0.6rem 0.875rem', marginBottom: '0.35rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <span style={{ fontSize: '1.1rem', fontWeight: 600 }}>{fmt(spot)}</span>
+          <div style={{ ...field, padding: '0.6rem 0.875rem', marginBottom: '0.35rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem' }}>
+            <label style={{ display: 'flex', alignItems: 'center', flex: '1 1 auto', minWidth: 0 }}>
+              <span style={{ fontSize: '1.1rem', fontWeight: 600 }}>$</span>
+              <input
+                type="text"
+                inputMode="decimal"
+                aria-label="Current spot price"
+                value={spotInputs[metal]}
+                onChange={handleSpotChange}
+                onBlur={handleSpotBlur}
+                style={{
+                  width: '100%',
+                  minWidth: 0,
+                  border: 'none',
+                  background: 'transparent',
+                  color: TEXT,
+                  fontSize: '1.1rem',
+                  fontWeight: 600,
+                  fontFamily: 'inherit',
+                  padding: 0,
+                  margin: 0,
+                }}
+              />
+            </label>
             <span style={{ fontSize: '0.75rem', color: TEXT_SEC }}>Troy oz · {today}{updateTime ? ` · ${updateTime}` : ''}</span>
           </div>
 
