@@ -3,22 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MetalsCalc.com — Buying calculator for precious-metal dealers</title>
-  <meta name="description" content="MetalsCalc.com turns live Au/Ag/Pt prices and your buy percentages into an instant offer — and a finished invoice — on any phone. No spreadsheets, no signal required.">
+  <title>Gold &amp; Silver Spot Price Calculator | MetalsCalc</title>
+  <meta name="description" content="Free gold, silver, and platinum spot price calculator. Estimate scrap value by live spot price, weight, purity, and payout percentage in seconds.">
+  <link rel="canonical" href="https://metalscalc.com/">
 
   <!-- Open Graph / link preview -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://metalscalc.com/">
-  <meta property="og:title"       content="MetalsCalc.com — Buying calculator for precious-metal dealers">
-  <meta property="og:description" content="Live Au/Ag/Pt spot prices, your buy percentages, a finished invoice — in under ten seconds. Runs offline, on any phone.">
+  <meta property="og:title"       content="Gold &amp; Silver Spot Price Calculator | MetalsCalc">
+  <meta property="og:description" content="Calculate gold, silver, and platinum scrap value using live spot prices, weight, purity, and payout percentage.">
   <meta property="og:image"       content="https://metalscalc.com/icon.png">
   <meta property="og:image:width"  content="704">
   <meta property="og:image:height" content="704">
 
   <!-- Twitter / X card -->
   <meta name="twitter:card"        content="summary">
-  <meta name="twitter:title"       content="MetalsCalc.com — Buying calculator for precious-metal dealers">
-  <meta name="twitter:description" content="Live Au/Ag/Pt spot prices, your buy percentages, a finished invoice — in under ten seconds. Runs offline, on any phone.">
+  <meta name="twitter:title"       content="Gold &amp; Silver Spot Price Calculator | MetalsCalc">
+  <meta name="twitter:description" content="Free spot price calculator for gold, silver, and platinum scrap value.">
   <meta name="twitter:image"       content="https://metalscalc.com/icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,8 +32,66 @@
           href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
   </noscript>
 
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=guide-buttons">
   <link rel="stylesheet" href="CalcA/dist/style.css?v=spot-refresh">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://metalscalc.com/#calculator",
+        "name": "MetalsCalc Spot Price Calculator",
+        "url": "https://metalscalc.com/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "description": "A free gold, silver, and platinum spot price calculator for estimating precious metal scrap value by live spot price, weight, purity, and payout percentage.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://metalscalc.com/#organization",
+        "name": "MetalsCalc",
+        "url": "https://metalscalc.com/",
+        "logo": "https://metalscalc.com/icon.png"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://metalscalc.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I calculate scrap gold value?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Enter the gold weight, choose the unit, select the karat or purity, confirm the current spot price, and calculate. MetalsCalc estimates melt value from troy ounces, purity, and spot price."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use this as a silver spot price calculator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Choose Silver, enter weight, select fine silver, sterling, coin silver, or a custom purity, then calculate the estimated silver scrap value from spot price."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I edit the spot price?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The calculator fills in the current spot price automatically, but you can click the spot price field and enter your own price if you want to use a different market quote."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -60,16 +119,26 @@
         <span>MetalsCalc.com</span>
       </span>
     </a>
-    <a class="btn btn--gold nav__cta" href="https://app.metalscalc.com/">Try Mobile App</a>
+    <div class="nav__actions">
+      <a class="btn btn--ghost nav__guide" href="/calculator-guide.html" data-short-label="Guide"><span>Calculator Guide</span></a>
+      <a class="btn btn--gold nav__cta" href="https://app.metalscalc.com/">Try Mobile App</a>
+    </div>
   </header>
 
   <main id="top">
 
     <!-- ===== Scrap calculator widget ===== -->
     <div id="scrap-calculator"></div>
-    <div class="widget-spacer" style="background:#ffffff;height:clamp(8rem,16vw,14rem);display:flex;align-items:center;justify-content:center;padding:0 var(--pad-x)">
-      <p style="margin:0;font-family:'Space Grotesk',system-ui,sans-serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:600;color:#1a1a1a;text-align:center;letter-spacing:-.01em;">Like this? Explore our full mobile app below.</p>
-    </div>
+    <section class="calculator-seo" aria-labelledby="calculator-title">
+      <p class="calculator-seo__eyebrow">Free precious metals calculator</p>
+      <h1 id="calculator-title">Gold &amp; Silver Spot Price Calculator</h1>
+      <p>Use MetalsCalc as a fast gold calculator, silver calculator, platinum calculator, or general spot price calculator. Enter weight, choose purity, adjust the spot price if needed, and estimate scrap value or payout in seconds.</p>
+      <div class="calculator-seo__links" aria-label="Calculator shortcuts">
+        <a href="#scrap-calculator">Gold price calculator</a>
+        <a href="#scrap-calculator">Silver spot price calculator</a>
+        <a href="#scrap-calculator">Scrap gold calculator</a>
+      </div>
+    </section>
     <!-- ===== Hero ===== -->
     <section class="hero">
       <div class="hero__copy">
@@ -217,6 +286,40 @@
       </div>
     </section>
 
+    <!-- ===== SEO FAQ ===== -->
+    <section class="faq" id="faq">
+      <div class="faq__inner">
+        <span class="eyebrow">Calculator FAQ</span>
+        <h2>Gold, silver, and spot price calculator basics.</h2>
+        <div class="faq__grid">
+          <article class="faq__item">
+            <h3>How do I calculate scrap gold value?</h3>
+            <p>Enter the gold weight, choose grams, dwt, or troy ounces, select the karat or custom purity, and calculate. MetalsCalc uses spot price, purity, and weight to estimate melt value.</p>
+          </article>
+          <article class="faq__item">
+            <h3>Can I use this as a silver spot price calculator?</h3>
+            <p>Yes. Select Silver, enter your weight, choose fine silver, sterling, coin silver, or custom purity, then calculate the estimated silver scrap value from the current spot price.</p>
+          </article>
+          <article class="faq__item">
+            <h3>What is a spot price calculator?</h3>
+            <p>A spot price calculator estimates metal value using the current market price per troy ounce. MetalsCalc supports gold, silver, and platinum spot calculations.</p>
+          </article>
+          <article class="faq__item">
+            <h3>Can I edit the current spot price?</h3>
+            <p>Yes. The spot price field fills automatically, but you can click it, type your own price, or use Refresh to return to the latest current spot price.</p>
+          </article>
+          <article class="faq__item">
+            <h3>Does the calculator support 14K gold?</h3>
+            <p>Yes. The gold calculator includes common karats like 24K, 22K, 18K, 14K, and 10K, plus a custom purity option for unusual alloys or refinery-specific percentages.</p>
+          </article>
+          <article class="faq__item">
+            <h3>What does payout percentage mean?</h3>
+            <p>Payout percentage is the percentage of estimated melt value offered to the seller. For example, an 80% payout means the offer is 80% of the calculated scrap value.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== Final CTA ===== -->
     <section class="cta" id="install">
       <h2>Price your next lot<br>in <span class="gold">ten seconds.</span></h2>
@@ -239,6 +342,10 @@
           <span>MetalsCalc.com</span>
         </span>
       </a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/">Calculator</a>
+        <a class="footer__guide-btn" href="/calculator-guide.html">Calculator Guide</a>
+      </nav>
       <span class="footer__copy">© 2026</span>
     </div>
   </footer>
