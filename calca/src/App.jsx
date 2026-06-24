@@ -218,14 +218,27 @@ export default function App() {
     })
   }
 
+  const refreshSpot = () => {
+    const currentSpot = spotPrices[metal]
+    if (!currentSpot || currentSpot <= 0) return
+    spotEditedRef.current[metal] = false
+    setSpotInputs(prev => ({ ...prev, [metal]: spotInputValue(currentSpot) }))
+    setResult(null)
+  }
+
   const calculate = () => {
     const w = parseFloat(weight)
     if (!w || w <= 0) return
     const purityVal = purity === CUSTOM ? parseFloat(customPct) / 100 : purity
     if (!purityVal || purityVal <= 0 || purityVal > 1) return
-    if (!spot || spot <= 0) return
+    const effectiveSpot = spot && spot > 0 ? spot : spotPrices[metal]
+    if (!effectiveSpot || effectiveSpot <= 0) return
+    if (!spot || spot <= 0) {
+      spotEditedRef.current[metal] = false
+      setSpotInputs(prev => ({ ...prev, [metal]: spotInputValue(effectiveSpot) }))
+    }
     const troyOz = unit === 'grams' ? w * TROY_PER_GRAM : unit === 'dwt' ? w * TROY_PER_DWT : w
-    setResult(troyOz * purityVal * spot)
+    setResult(troyOz * purityVal * effectiveSpot)
   }
 
   const UNIT_LABEL = { grams: 'g', dwt: 'dwt', troy_oz: 'ozt' }
@@ -420,6 +433,7 @@ export default function App() {
                 value={spotInputs[metal]}
                 onChange={handleSpotChange}
                 onBlur={handleSpotBlur}
+                onFocus={(e) => e.target.select()}
                 style={{
                   width: '100%',
                   minWidth: 0,
@@ -435,6 +449,25 @@ export default function App() {
               />
             </label>
             <span style={{ fontSize: '0.75rem', color: TEXT_SEC }}>Troy oz · {today}{updateTime ? ` · ${updateTime}` : ''}</span>
+            <button
+              type="button"
+              onClick={refreshSpot}
+              style={{
+                border: `1px solid ${BORDER}`,
+                borderRadius: '0.35rem',
+                background: 'transparent',
+                color: GOLD_FLAT,
+                flexShrink: 0,
+                fontFamily: 'inherit',
+                fontSize: '0.68rem',
+                fontWeight: 700,
+                letterSpacing: '0.04em',
+                padding: '0.22rem 0.45rem',
+                cursor: 'pointer',
+              }}
+            >
+              Refresh
+            </button>
           </div>
 
           <button
