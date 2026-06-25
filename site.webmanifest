@@ -1,0 +1,43 @@
+{
+  "name": "SpotCalc — Gold & Silver Spot Price Calculator",
+  "short_name": "SpotCalc",
+  "description": "Free gold, silver, and platinum spot price calculator. Estimate scrap value by live spot price, weight, purity, and payout percentage.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d0e0b",
+  "theme_color": "#0d0e0b",
+  "categories": ["finance", "business", "utilities"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "704x704",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "704x704",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Calculator",
+      "short_name": "Calc",
+      "url": "/?source=pwa-shortcut",
+      "description": "Open the precious metals scrap calculator"
+    },
+    {
+      "name": "Markets",
+      "short_name": "Markets",
+      "url": "/markets.html",
+      "description": "Precious metals market intelligence"
+    }
+  ]
+}

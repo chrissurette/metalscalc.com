@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://metalscalc.com/sitemap.xml
+Sitemap: https://spotcalc.com/sitemap.xml

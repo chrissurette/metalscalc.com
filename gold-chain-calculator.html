@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gold Chain Calculator | Estimate Chain Melt Value</title>
+  <meta name="description" content="Free gold chain calculator. Estimate the melt value of a gold chain or necklace by karat, weight, live spot price, and payout percentage.">
+  <link rel="canonical" href="https://spotcalc.com/gold-chain-calculator.html">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="SpotCalc">
+  <meta property="og:url"         content="https://spotcalc.com/gold-chain-calculator.html">
+  <meta property="og:title"       content="Gold Chain Calculator | Estimate Chain Melt Value">
+  <meta property="og:description" content="Free gold chain calculator. Estimate the melt value of a gold chain or necklace by karat, weight, live spot price, and payout percentage.">
+  <meta property="og:image"       content="https://spotcalc.com/icon.png">
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="Gold Chain Calculator | Estimate Chain Melt Value">
+  <meta name="twitter:description" content="Free gold chain calculator. Estimate the melt value of a gold chain or necklace by karat, weight, live spot price, and payout percentage.">
+  <meta name="twitter:image"       content="https://spotcalc.com/icon.png">
+
+  <link rel="icon" type="image/png" href="/icon.png">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0d0e0b">
+  <meta name="application-name" content="SpotCalc">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"></noscript>
+  <link rel="stylesheet" href="css/styles.css?v=spotcalc-cmp">
+  <link rel="stylesheet" href="calca/dist/style.css?v=spotcalc-preset">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://spotcalc.com/#website",
+      "url": "https://spotcalc.com/",
+      "name": "SpotCalc",
+      "publisher": {
+        "@id": "https://spotcalc.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://spotcalc.com/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://spotcalc.com/#organization",
+      "name": "SpotCalc",
+      "url": "https://spotcalc.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://spotcalc.com/icon.png",
+        "width": 704,
+        "height": 704
+      }
+    },
+    {
+      "@type": [
+        "WebApplication",
+        "SoftwareApplication"
+      ],
+      "@id": "https://spotcalc.com/gold-chain-calculator.html#calculator",
+      "name": "Gold Chain Calculator",
+      "url": "https://spotcalc.com/gold-chain-calculator.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "description": "Free gold chain calculator. Estimate the melt value of a gold chain or necklace by karat, weight, live spot price, and payout percentage.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to use the gold chain calculator",
+      "description": "Free gold chain calculator. Estimate the melt value of a gold chain or necklace by karat, weight, live spot price, and payout percentage.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Weigh the item",
+          "text": "Use a digital gram or pennyweight scale. Heavier, solid pieces give the most reliable estimate."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Select the metal and purity",
+          "text": "Pick gold, silver, or platinum, then choose the karat or fineness. Use Custom to enter an exact percentage."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Confirm the live spot price",
+          "text": "The calculator fills in the current spot price automatically. Edit it if you use a different quote."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Calculate and adjust payout",
+          "text": "Press Calculate to see the melt value, then move the payout slider to model a buying offer."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://spotcalc.com/gold-chain-calculator.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much is a 14K gold chain worth?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 15-gram 14K chain holds about $1,124.71 in melt value at a $4,000 spot (15 \u00f7 31.1035 \u00d7 0.583 \u00d7 $4,000). Heavier chains are worth proportionally more."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are hollow gold chains worth less?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Hollow chains contain less gold than solid chains of the same size, so they weigh and value much lower. The calculator uses actual weight, which accounts for this."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the clasp the same gold as the chain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not always. Some clasps or spring rings are plated or a different karat. For large lots, weigh and price questionable parts separately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What karats are gold chains usually?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most solid gold chains are 10K, 14K, or 18K. Higher-karat 22K and 24K chains are common in some markets and hold more gold value."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://spotcalc.com/gold-chain-calculator.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://spotcalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Calculators",
+          "item": "https://spotcalc.com/calculators.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Gold Chain Calculator",
+          "item": "https://spotcalc.com/gold-chain-calculator.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="light-page">
+  <div class="ticker" role="region" aria-label="Spot metal prices">
+    <div class="ticker__inner">
+      <div class="ticker__quotes">
+        <span class="quote" data-sym="XAU"><span class="quote__sym">XAU</span><span class="quote__price">-</span></span>
+        <span class="quote" data-sym="XAG"><span class="quote__sym">XAG</span><span class="quote__price">-</span></span>
+        <span class="quote" data-sym="XPT"><span class="quote__sym">XPT</span><span class="quote__price">-</span></span>
+        <span class="quote" data-sym="XPD"><span class="quote__sym">XPD</span><span class="quote__price">-</span></span>
+      </div>
+      <div class="ticker__src"><span class="live-dot"></span>LIVE &middot; gold-api.com</div>
+    </div>
+  </div>
+  <header class="nav">
+    <a class="brand" href="/">
+      <span style="position:relative;display:inline-block;width:58px;height:58px;flex-shrink:0;margin-left:-6px;mix-blend-mode:screen;background:#000">
+        <img src="icon.png" alt="" style="width:58px;height:58px;object-fit:contain;filter:invert(1);display:block">
+        <span style="position:absolute;inset:0;background:linear-gradient(145deg,#ffe680 0%,#dcb45a 50%,#9a6e1a 100%);mix-blend-mode:multiply;pointer-events:none"></span>
+      </span>
+      <span style="display:flex;flex-direction:column;gap:.08rem;line-height:1.2"><span>SpotCalc.com</span><span>MetalsCalc.com</span></span>
+    </a>
+    <nav class="page-nav" aria-label="Primary">
+      <a class="nav__link" href="/calculators.html">Calculators</a>
+      <a class="nav__link" href="/markets.html">Markets</a>
+      <a class="nav__link" href="/buy.html">Buy</a>
+      <a class="nav__link" href="/sell.html">Sell</a>
+      <a class="nav__link" href="/learn.html">Learn</a>
+      <a class="btn btn--gold nav__cta" href="/#scrap-calculator">Launch Calculator</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="guide">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">/</span>
+        <a href="/calculators.html">Calculators</a> <span aria-hidden="true">/</span>
+        <span aria-current="page">Gold Chain Calculator</span>
+      </nav>
+
+      <header class="guide__hero">
+        <p class="eyebrow">Gold Chain</p>
+        <h1>Gold Chain Calculator</h1>
+        <p>Free gold chain calculator. Estimate the melt value of a gold chain or necklace by karat, weight, live spot price, and payout percentage.</p>
+        <a class="btn btn--gold" href="#scrap-calculator">Use the calculator</a>
+      </header>
+
+      <section class="calculator-embed" aria-label="Gold Chain Calculator">
+        <div id="scrap-calculator"></div>
+      </section>
+
+      <section class="guide__section">
+        <h2>About gold chain</h2>
+        <p>Gold chains are usually solid 10K, 14K, or 18K, and because they can be heavy, they often hold significant melt value. A light chain may weigh 3–10 grams, while a substantial rope or Cuban link can weigh 30 grams or more.</p>
+        <p>Watch for hollow chains and clasps: hollow links weigh less than they look, and some clasps are a different metal. Weigh the chain, choose the karat, and the calculator estimates its gold value at the live spot price.</p>
+        <p>Worked example at an illustrative gold spot of $4,000.00 per troy ounce (use the live price above for current figures):</p><div class="guide__formula"><span class="formula__part formula__part--weight">15 g = 0.4823 troy oz</span><span class="formula__operator">x</span><span class="formula__part formula__part--purity">58.3% purity</span><span class="formula__operator">x</span><span class="formula__part formula__part--spot">$4,000.00 spot</span><span class="formula__operator">=</span><span class="formula__part formula__part--value">$1,124.63 melt value</span></div>
+      </section>
+
+      <section class="guide__section">
+        <h2>How to calculate gold chain value</h2>
+        <ol class="guide__steps">
+          <li><strong>Weigh the item.</strong> Use a digital gram or pennyweight scale. Heavier, solid pieces give the most reliable estimate.</li>
+          <li><strong>Select the metal and purity.</strong> Pick gold, silver, or platinum, then choose the karat or fineness. Use Custom to enter an exact percentage.</li>
+          <li><strong>Confirm the live spot price.</strong> The calculator fills in the current spot price automatically. Edit it if you use a different quote.</li>
+          <li><strong>Calculate and adjust payout.</strong> Press Calculate to see the melt value, then move the payout slider to model a buying offer.</li>
+        </ol>
+      </section>
+
+      <section class="faq" aria-labelledby="faq-title">
+        <div class="faq__inner">
+          <span class="eyebrow">FAQ</span>
+          <h2 id="faq-title">Gold Chain Calculator questions</h2>
+          <div class="faq__grid">
+          <article class="faq__item"><h3>How much is a 14K gold chain worth?</h3><p>A 15-gram 14K chain holds about $1,124.71 in melt value at a $4,000 spot (15 ÷ 31.1035 × 0.583 × $4,000). Heavier chains are worth proportionally more.</p></article>
+          <article class="faq__item"><h3>Are hollow gold chains worth less?</h3><p>Yes. Hollow chains contain less gold than solid chains of the same size, so they weigh and value much lower. The calculator uses actual weight, which accounts for this.</p></article>
+          <article class="faq__item"><h3>Is the clasp the same gold as the chain?</h3><p>Not always. Some clasps or spring rings are plated or a different karat. For large lots, weigh and price questionable parts separately.</p></article>
+          <article class="faq__item"><h3>What karats are gold chains usually?</h3><p>Most solid gold chains are 10K, 14K, or 18K. Higher-karat 22K and 24K chains are common in some markets and hold more gold value.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide__section guide__related" aria-labelledby="related-title">
+        <h2 id="related-title">Related calculators</h2>
+        <div class="guide__related-grid">
+          <a class="guide__related-link" href="/14k-gold-calculator.html">14K Gold Calculator</a>
+          <a class="guide__related-link" href="/18k-gold-calculator.html">18K Gold Calculator</a>
+          <a class="guide__related-link" href="/10k-gold-calculator.html">10K Gold Calculator</a>
+          <a class="guide__related-link" href="/22k-gold-calculator.html">22K Gold Calculator</a>
+          <a class="guide__related-link" href="/24k-gold-calculator.html">24K Gold Calculator</a>
+          <a class="guide__related-link" href="/sterling-silver-calculator.html">Sterling Silver Calculator</a>
+          <a class="guide__related-link" href="/999-fine-silver-calculator.html">.999 Fine Silver Calculator</a>
+          <a class="guide__related-link" href="/coin-silver-calculator.html">Coin Silver Calculator</a>
+          <a class="guide__related-link" href="/platinum-calculator.html">Platinum Calculator</a>
+          <a class="guide__related-link" href="/scrap-gold-calculator.html">Scrap Gold Calculator</a>
+          <a class="guide__related-link" href="/gold-gram-calculator.html">Gold Gram Calculator</a>
+          <a class="guide__related-link" href="/gold-dwt-calculator.html">Gold Pennyweight (DWT) Calculator</a>
+          <a class="guide__related-link" href="/troy-ounce-calculator.html">Troy Ounce Calculator</a>
+          <a class="guide__related-link" href="/silver-calculator.html">Silver Calculator</a>
+          <a class="guide__related-link" href="/gold-ring-calculator.html">Gold Ring Calculator</a>
+          <a class="guide__related-link" href="/gold-necklace-calculator.html">Gold Necklace Calculator</a>
+          <a class="guide__related-link" href="/gold-bracelet-calculator.html">Gold Bracelet Calculator</a>
+          <a class="guide__related-link" href="/pawn-shop-gold-calculator.html">Pawn Shop Gold Calculator</a>
+          <a class="guide__related-link" href="/estate-jewelry-calculator.html">Estate Jewelry Calculator</a>
+        </div>
+      </section>
+
+      <section class="guide__section guide__related" aria-labelledby="tags-title">
+        <h2 id="tags-title">People also search for</h2>
+        <div class="guide__chips">
+          <span>gold chain value</span>
+          <span>gold necklace calculator</span>
+          <span>14k chain melt value</span>
+          <span>sell gold chain</span>
+        </div>
+      </section>
+
+      <footer class="guide__cta">
+        <h2>Estimate your gold in seconds</h2>
+        <p>Free, no account, works offline. Add multiple items to total a full lot.</p>
+        <a class="btn btn--gold btn--lg" href="#scrap-calculator">Open the calculator</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <a class="brand" href="/">
+        <span style="position:relative;display:inline-block;width:58px;height:58px;flex-shrink:0;margin-left:-6px;mix-blend-mode:screen;background:#000">
+          <img src="icon.png" alt="" style="width:58px;height:58px;object-fit:contain;filter:invert(1);display:block">
+          <span style="position:absolute;inset:0;background:linear-gradient(145deg,#ffe680 0%,#dcb45a 50%,#9a6e1a 100%);mix-blend-mode:multiply;pointer-events:none"></span>
+        </span>
+        <span style="display:flex;flex-direction:column;gap:.08rem;line-height:1.2"><span>SpotCalc.com</span><span>MetalsCalc.com</span></span>
+      </a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/calculators.html">Calculators</a>
+        <a href="/gold.html">Gold</a>
+        <a href="/silver.html">Silver</a>
+        <a href="/coins.html">Coins</a>
+        <a href="/bullion.html">Bullion</a>
+        <a href="/markets.html">Markets</a>
+        <a href="/buy.html">Buy</a>
+        <a href="/sell.html">Sell</a>
+        <a href="/learn.html">Learn</a>
+        <a href="/about.html">About</a>
+      </nav>
+      <span class="footer__copy">&copy; 2026 SpotCalc</span>
+    </div>
+  </footer>
+  <a class="powered-by" href="https://SuretteSystems.com" target="_blank" rel="noopener">
+    <span class="powered-by__text">Website by <strong>SuretteSystems.com</strong></span>
+    <span class="powered-by__arrow">&rarr;</span>
+  </a>
+  <script src="js/ticker.js"></script>
+  <script src="js/active-nav.js?v=spotcalc-active-nav"></script>
+    <script>window.__SPOTCALC_PRESET__ = { metal: "gold", purity: 0.583 };</script>
+  <script>window.process = { env: { NODE_ENV: 'production' } };</script>
+  <script src="calca/dist/scrap-calculator.iife.js?v=spotcalc-preset"></script>
+  <script src="js/widget-focus-zoom.js"></script>
+  <script src="js/analytics.js" defer></script>
+</body>
+</html>

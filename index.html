@@ -3,27 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gold &amp; Silver Spot Price Calculator | MetalsCalc</title>
+  <title>Gold &amp; Silver Spot Price Calculator | SpotCalc</title>
   <meta name="description" content="Free gold, silver, and platinum spot price calculator. Estimate scrap value by live spot price, weight, purity, and payout percentage in seconds.">
-  <link rel="canonical" href="https://metalscalc.com/">
+  <link rel="canonical" href="https://spotcalc.com/">
 
   <!-- Open Graph / link preview -->
   <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://metalscalc.com/">
-  <meta property="og:title"       content="Gold &amp; Silver Spot Price Calculator | MetalsCalc">
+  <meta property="og:url"         content="https://spotcalc.com/">
+  <meta property="og:title"       content="Gold &amp; Silver Spot Price Calculator | SpotCalc">
   <meta property="og:description" content="Calculate gold, silver, and platinum scrap value using live spot prices, weight, purity, and payout percentage.">
-  <meta property="og:image"       content="https://metalscalc.com/icon.png">
+  <meta property="og:image"       content="https://spotcalc.com/icon.png">
   <meta property="og:image:width"  content="704">
   <meta property="og:image:height" content="704">
 
   <!-- Twitter / X card -->
   <meta name="twitter:card"        content="summary">
-  <meta name="twitter:title"       content="Gold &amp; Silver Spot Price Calculator | MetalsCalc">
+  <meta name="twitter:title"       content="Gold &amp; Silver Spot Price Calculator | SpotCalc">
   <meta name="twitter:description" content="Free spot price calculator for gold, silver, and platinum scrap value.">
-  <meta name="twitter:image"       content="https://metalscalc.com/icon.png">
+  <meta name="twitter:image"       content="https://spotcalc.com/icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.gold-api.com">
   <!-- Load webfonts non-blocking: page renders immediately with fallbacks, upgrades when fonts arrive -->
   <link rel="stylesheet" media="print" onload="this.media='all'"
         href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
@@ -33,16 +34,16 @@
   </noscript>
 
   <link rel="stylesheet" href="css/styles.css?v=spotcalc-active-nav">
-  <link rel="stylesheet" href="calca/dist/style.css?v=spotcalc-no-recs">
+  <link rel="stylesheet" href="calca/dist/style.css?v=spotcalc-preset">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://metalscalc.com/#calculator",
-        "name": "MetalsCalc Spot Price Calculator",
-        "url": "https://metalscalc.com/",
+        "@id": "https://spotcalc.com/#calculator",
+        "name": "SpotCalc Spot Price Calculator",
+        "url": "https://spotcalc.com/",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Any",
         "description": "A free gold, silver, and platinum spot price calculator for estimating precious metal scrap value by live spot price, weight, purity, and payout percentage.",
@@ -54,14 +55,14 @@
       },
       {
         "@type": "Organization",
-        "@id": "https://metalscalc.com/#organization",
-        "name": "MetalsCalc",
-        "url": "https://metalscalc.com/",
-        "logo": "https://metalscalc.com/icon.png"
+        "@id": "https://spotcalc.com/#organization",
+        "name": "SpotCalc",
+        "url": "https://spotcalc.com/",
+        "logo": "https://spotcalc.com/icon.png"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://metalscalc.com/#faq",
+        "@id": "https://spotcalc.com/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -92,6 +93,55 @@
     ]
   }
   </script>
+  <!-- SEO-AUTO:common -->
+  <link rel="icon" type="image/png" href="/icon.png">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0d0e0b">
+  <meta name="application-name" content="SpotCalc">
+  <meta name="apple-mobile-web-app-title" content="SpotCalc">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  <!-- GSC verification: paste the google-site-verification meta tag here when set up -->
+  <!-- SEO-AUTO:jsonld -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://spotcalc.com/#website",
+      "url": "https://spotcalc.com/",
+      "name": "SpotCalc",
+      "description": "Free gold, silver, and platinum spot price calculator.",
+      "publisher": {
+        "@id": "https://spotcalc.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://spotcalc.com/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://spotcalc.com/#organization",
+      "name": "SpotCalc",
+      "url": "https://spotcalc.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://spotcalc.com/icon.png",
+        "width": 704,
+        "height": 704
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -121,6 +171,7 @@
       </span>
     </a>
     <div class="nav__actions">
+      <a class="nav__link" href="/calculators.html">Calculators</a>
       <a class="nav__link" href="/markets.html">Markets</a>
       <a class="nav__link" href="/buy.html">Buy</a>
       <a class="nav__link" href="/sell.html">Sell</a>
@@ -170,7 +221,7 @@
           <div class="iphone__screen">
             <div class="iphone__island"></div>
             <div class="iphone__viewport">
-              <img src="screenshot.png" width="475" height="1211"
+              <img src="screenshot.png" fetchpriority="high" decoding="async" width="475" height="1211"
                    alt="MetalsCalc.com list view showing gold, silver and coin lots with combined totals and a $5,446.41 total offer">
             </div>
             <div class="iphone__home-bar"></div>
@@ -187,7 +238,7 @@
             <div class="iphone__screen">
               <div class="iphone__island"></div>
               <div class="iphone__viewport">
-                <img src="screenshot2.png" width="473" height="907"
+                <img src="screenshot2.png" loading="lazy" decoding="async" width="473" height="907"
                      alt="MetalsCalc purity settings panel showing customizable percentages for gold karats, silver grades, and platinum">
               </div>
               <div class="iphone__home-bar"></div>
@@ -225,7 +276,7 @@
             <div class="iphone__screen">
               <div class="iphone__island"></div>
               <div class="iphone__viewport">
-                <img src="screenshot3.png" width="479" height="900"
+                <img src="screenshot3.png" loading="lazy" decoding="async" width="479" height="900"
                      alt="MetalsCalc invoice view showing finalized offer of $5,430.60 with PDF, Photo, and Email export buttons">
               </div>
               <div class="iphone__home-bar"></div>
@@ -243,7 +294,7 @@
             <div class="iphone__screen">
               <div class="iphone__island"></div>
               <div class="iphone__viewport">
-                <img src="screenshot4.png" width="479" height="970"
+                <img src="screenshot4.png" loading="lazy" decoding="async" width="479" height="970"
                      alt="MetalsCalc invoice editing screen showing customer name, phone, address fields and per-item offer overrides">
               </div>
               <div class="iphone__home-bar"></div>
@@ -373,8 +424,9 @@
   <script src="js/ticker.js"></script>
   <script src="js/active-nav.js?v=spotcalc-active-nav"></script>
   <script>window.process = { env: { NODE_ENV: 'production' } };</script>
-  <script src="calca/dist/scrap-calculator.iife.js?v=spotcalc-no-recs"></script>
+  <script src="calca/dist/scrap-calculator.iife.js?v=spotcalc-preset"></script>
   <script src="js/scroll-hint.js"></script>
   <script src="js/widget-focus-zoom.js"></script>
+  <script src="js/analytics.js" defer></script>
 </body>
 </html>
