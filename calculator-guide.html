@@ -26,7 +26,7 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
   </noscript>
-  <link rel="stylesheet" href="css/styles.css?v=guide-page">
+  <link rel="stylesheet" href="css/styles.css?v=spotcalc-active-nav">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,7 +50,18 @@
   }
   </script>
 </head>
-<body>
+<body class="light-page">
+  <div class="ticker" role="region" aria-label="Spot metal prices">
+    <div class="ticker__inner">
+      <div class="ticker__quotes">
+        <span class="quote" data-sym="XAU"><span class="quote__sym">XAU</span><span class="quote__price">-</span></span>
+        <span class="quote" data-sym="XAG"><span class="quote__sym">XAG</span><span class="quote__price">-</span></span>
+        <span class="quote" data-sym="XPT"><span class="quote__sym">XPT</span><span class="quote__price">-</span></span>
+        <span class="quote" data-sym="XPD"><span class="quote__sym">XPD</span><span class="quote__price">-</span></span>
+      </div>
+      <div class="ticker__src"><span class="live-dot"></span>LIVE &middot; gold-api.com</div>
+    </div>
+  </div>
   <header class="nav">
     <a class="brand" href="/">
       <span style="position:relative;display:inline-block;width:58px;height:58px;flex-shrink:0;margin-left:-6px;mix-blend-mode:screen;background:#000">
@@ -62,12 +73,18 @@
         <span>MetalsCalc.com</span>
       </span>
     </a>
-    <a class="btn btn--gold nav__cta" href="/">Use Calculator</a>
+    <nav class="page-nav" aria-label="Primary">
+      <a class="nav__link" href="/markets.html">Markets</a>
+      <a class="nav__link" href="/buy.html">Buy</a>
+      <a class="nav__link" href="/sell.html">Sell</a>
+      <a class="nav__link" href="/learn.html">Learn</a>
+      <a class="btn btn--gold nav__cta" href="/">Launch Calculator</a>
+    </nav>
   </header>
 
   <main>
     <article class="guide">
-      <a class="guide__back" href="/">← Back to calculator</a>
+      <a class="guide__back" href="/">Back to calculator</a>
       <header class="guide__hero">
         <p class="eyebrow">Calculator Guide</p>
         <h1>MetalsCalc Calculator Guide</h1>
@@ -224,9 +241,12 @@
       </a>
       <nav class="footer__links" aria-label="Footer">
         <a href="/">Calculator</a>
-        <a href="/calculator-guide.html">Calculator Guide</a>
+        <a href="/markets.html">Markets</a>
+        <a href="/buy.html">Buy</a>
+        <a href="/sell.html">Sell</a>
+        <a href="/learn.html">Learn</a>
       </nav>
-      <span class="footer__copy">© 2026</span>
+      <span class="footer__copy">&copy; 2026</span>
     </div>
   </footer>
 
@@ -234,5 +254,7 @@
     <span class="powered-by__text">Website by <strong>SuretteSystems.com</strong></span>
     <span class="powered-by__arrow">→</span>
   </a>
+  <script src="js/ticker.js"></script>
+  <script src="js/active-nav.js?v=spotcalc-active-nav"></script>
 </body>
 </html>

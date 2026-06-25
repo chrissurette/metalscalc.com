@@ -265,7 +265,6 @@ export default function App() {
   }
 
   const payoutValue = result !== null ? result * payout / 100 : null
-
   const handleClearReset = () => {
     setSavedItems([])
     setWeight('')
@@ -494,6 +493,7 @@ export default function App() {
               {result !== null ? fmt(result) : '—'}
             </span>
           </div>
+
         </section>
 
         {/* ── Step 4: Payout Slider ── */}

@@ -1,5 +1,5 @@
 (function () {
-  var SYMBOLS = ['XAU', 'XAG', 'XPT'];
+  var SYMBOLS = ['XAU', 'XAG', 'XPT', 'XPD'];
   var BASE    = 'https://api.gold-api.com/price/';
 
   function fmt(price) {
