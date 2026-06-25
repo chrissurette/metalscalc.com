@@ -1,0 +1,9 @@
+# 301 secondary brand domains -> primary (spotcalc.com), path-preserving.
+http://metalscalc.com/*         https://spotcalc.com/:splat   301!
+https://metalscalc.com/*        https://spotcalc.com/:splat   301!
+http://www.metalscalc.com/*     https://spotcalc.com/:splat   301!
+https://www.metalscalc.com/*    https://spotcalc.com/:splat   301!
+http://spotpricecalc.com/*      https://spotcalc.com/:splat   301!
+https://spotpricecalc.com/*     https://spotcalc.com/:splat   301!
+http://www.spotpricecalc.com/*  https://spotcalc.com/:splat   301!
+https://www.spotpricecalc.com/* https://spotcalc.com/:splat   301!
